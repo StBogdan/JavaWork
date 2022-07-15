@@ -5,18 +5,17 @@ import java.io.*;
 public class Problem1051 {
 
     public int maxProfit(int[] prices) {
-        int cmax = 0;
+        int cMax = 0;
         for (int i = 0; i < prices.length - 1; i++) {
-            int cmin = prices[i];
+            int cMin = prices[i];
             for (int j = i + 1; j < prices.length; j++) {
-                if (prices[j] - cmin > cmax) {
-                    cmax = prices[j] - cmin;
+                if (prices[j] - cMin > cMax) {
+                    cMax = prices[j] - cMin;
                 }
             }
         }
-        return cmax;
+        return cMax;
     }
-
 
     public static int[] stringToIntegerArray(String input) {
         input = input.trim();

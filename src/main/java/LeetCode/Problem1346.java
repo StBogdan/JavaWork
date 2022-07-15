@@ -5,13 +5,13 @@ import java.util.Set;
 
 public class Problem1346 {
     public boolean checkIfExist(int[] arr) {
-        Set<Float> intset = new HashSet<>();
+        Set<Float> intSet = new HashSet<>();
         for (int x : arr) {
             float elem = (float) x;
-            if (intset.contains(elem / 2) || intset.contains(elem * 2)) {
+            if (intSet.contains(elem / 2) || intSet.contains(elem * 2)) {
                 return true;
             } else {
-                intset.add(elem);
+                intSet.add(elem);
             }
         }
         return false;
