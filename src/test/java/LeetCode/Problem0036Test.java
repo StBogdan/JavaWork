@@ -6,11 +6,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class Problem36Test {
-    Problem36 prob;
+    Problem0036 prob;
 
     @BeforeEach
     void setUp() {
-        this.prob = new Problem36();
+        this.prob = new Problem0036();
     }
 
     @Test
