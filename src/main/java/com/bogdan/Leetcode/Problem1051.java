@@ -1,4 +1,4 @@
-package LeetCode;
+package com.bogdan.Leetcode;
 
 import java.io.*;
 

@@ -1,4 +1,4 @@
-package LeetCode;
+package com.bogdan.Leetcode;
 
 import static org.junit.jupiter.api.Assertions.*;
 

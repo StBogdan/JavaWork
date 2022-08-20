@@ -1,9 +1,8 @@
-package LeetCode;
+package com.bogdan.Leetcode;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class Problem1347Test {
-
 
     @org.junit.jupiter.api.Test
     public void basicTest1() {
