@@ -1,20 +1,18 @@
 package com.bogdan.Leetcode;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Before;
+import org.junit.Test;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-class Problem36Test {
+public class Problem0036Test {
     Problem0036 prob;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         this.prob = new Problem0036();
     }
 
     @Test
-    void testStatementValid() {
+    public void testStatementValid() {
         char[][] input = new char[][] {
                 { '5', '3', '.', '.', '7', '.', '.', '.', '.' },
                 { '6', '.', '.', '1', '9', '5', '.', '.', '.' },
@@ -31,7 +29,7 @@ class Problem36Test {
     }
 
     @Test
-    void testStatementInValid() {
+    public void testStatementInValid() {
         char[][] input = new char[][] {
                 { '5', '3', '.', '.', '7', '.', '.', '.', '.' },
                 { '6', '.', '.', '1', '9', '5', '.', '.', '.' },
