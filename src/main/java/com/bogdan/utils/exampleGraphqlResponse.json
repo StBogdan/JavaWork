@@ -1,0 +1,12 @@
+{
+    "data": {
+        "question": {
+            "content": "The whole description of the problem",
+            "titleSlug": "two-sum",
+            "title": "Two Sum",
+            "isPaidOnly": false,
+            "difficulty": "Easy",
+            "questionId": "1"
+        }
+    }
+}
