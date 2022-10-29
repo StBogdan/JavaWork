@@ -46,9 +46,7 @@ public class GraphQLClient {
                 + "    content\n  titleSlug\n    title\n  isPaidOnly\n    difficulty\n questionId\n"
                 + "  }\n" + "}\n";
 
-        System.out.println("Looking at executing query: ");
-        System.out.println(postBody);
-
+        System.out.printf("Looking at executing query: %s\n",postBody );
 
         RequestBody requestBody =
                 RequestBody.create(postBody, MediaType.parse("application/graphql; charset=utf-8"));
@@ -59,21 +57,24 @@ public class GraphQLClient {
                 .addHeader("x-csrftoken", csrftoken).url(graphqlUrl).post(requestBody).build();
 
         Response response1 = client.newCall(request).execute();
-        String rawResponseString = response1.body().string();
-        return rawResponseString;
+        return response1.body().string();
     }
 
     public static LeetcodeProblem convertIntoLeetCodeProblem(String rawLeetcodeJsonResponse) {
-        System.out.println("Raw returned response: ");
-        System.out.println(rawLeetcodeJsonResponse);
+        System.out.printf("GraphQLClient.convertIntoLeetCodeProblem(): %s\n", rawLeetcodeJsonResponse.length());
 
         var parsedResponse = new com.google.gson.Gson().fromJson(rawLeetcodeJsonResponse,
                 LeetCodeResponse.class);
 
         QuestionData question = parsedResponse.data.question;
+        System.out.printf("GraphQLClient.convertIntoLeetCodeProblem: question is %s\n", question);
 
         return new LeetcodeProblem(question.title, Integer.toString(question.questionId),
                 questionUrl + "/" + question.titleSlug, question.difficulty);
+    }
+
+    public static String getProblemHeaderString(LeetcodeProblem lcp){
+        return lcp.buildHeaderComment();
     }
 
     public static void main(String... args) throws IOException {
